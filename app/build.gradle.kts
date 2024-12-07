@@ -2,10 +2,9 @@ import com.automattic.android.measure.reporters.SlowSlowTasksMetricsReporter
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.ksp)
+    id("io.github.santimattius.android.application")
+    id("io.github.santimattius.android.application.compose")
+    id("io.github.santimattius.android.koin")
     alias(libs.plugins.detekt)
     alias(libs.plugins.google.secrets.gradle.plugin)
     alias(libs.plugins.automattic.measure.builds)
@@ -55,16 +54,6 @@ android {
             }
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-    buildFeatures {
-        compose = true
-    }
 
     packaging {
         resources {
@@ -77,15 +66,6 @@ android {
             it.javaDirectories += files("build/generated/ksp/${variant.name}/kotlin")
         }
     }
-}
-
-composeCompiler {
-    enableStrongSkippingMode = true
-    reportsDestination = layout.buildDirectory.dir("compose_compiler")
-}
-
-fun extraString(key: String): String {
-    return extra[key] as String
 }
 
 detekt {
@@ -103,10 +83,6 @@ measureBuilds {
     }
 }
 
-ksp {
-    arg("KOIN_CONFIG_CHECK","true")
-}
-
 dependencies {
 
     implementation(libs.core.ktx)
@@ -115,32 +91,21 @@ dependencies {
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.activity.compose)
 
-    implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.compose)
-    debugImplementation(libs.bundles.compose.debug)
-
     implementation(libs.bundles.coroutine)
     testImplementation(libs.coroutine.test)
     implementation(libs.bundles.retrofit)
     implementation(libs.gson.core)
     testImplementation(libs.mockwebserver)
 
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.android)
-    implementation(libs.koin.androidx.compose)
-    implementation(libs.koin.androidx.startup)
-
-    compileOnly(libs.koin.annotations.core)
-    ksp(libs.koin.annotations.compiler)
-
     implementation(libs.coil.core)
 
-    testImplementation(platform(libs.compose.bom))
     testImplementation(libs.junit)
 
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.test.ext)
     androidTestImplementation(libs.test.espresso)
+}
 
+
+fun extraString(key: String): String {
+    return extra[key] as String
 }

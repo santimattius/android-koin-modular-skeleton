@@ -1,3 +1,4 @@
+rootProject.name = "android-koin-modular-skeleton"
 pluginManagement {
     includeBuild("plugins")
     repositories {
@@ -13,5 +14,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "android-koin-modular-skeleton"
 include(":app")
+include(":features:first-module")
+include(":features:second-module")
