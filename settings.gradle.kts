@@ -18,5 +18,6 @@ dependencyResolutionManagement {
 gradle.startParameter.excludedTaskNames.addAll(listOf(":plugins:convention:testClasses"))
 
 include(":app")
+include(":core:ui")
 include(":features:first-module")
 include(":features:second-module")

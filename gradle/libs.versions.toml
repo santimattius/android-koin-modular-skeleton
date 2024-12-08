@@ -10,6 +10,7 @@ automatticMeasureBuilds = "3.1.1"
 # Core
 androidxComposeBom = "2024.11.00"
 activityCompose = "1.9.3"
+androidxCompose= "1.7.5"
 
 coreKtx = "1.15.0"
 lifecycle = "2.8.7"
@@ -18,7 +19,6 @@ retrofit = "2.11.0"
 okHttp = "4.12.0"
 coroutine = "1.9.0"
 gson = "2.11.0"
-coil = "2.7.0"
 
 koinBom = "4.1.0-Beta1"
 koinAnnotations = "2.0.0-Beta2"
@@ -33,53 +33,62 @@ material = "1.12.0"
 [libraries]
 # Define the libraries
 # Lifecycle
-lifecycle_runtime_ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
-lifecycle_viewmodel_compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
-lifecycle_runtime_compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 
 # Compose libraries
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
-compose_ui = { group = "androidx.compose.ui", name = "ui" }
-compose_tooling_preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-compose_tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-compose_ui_test_manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-compose_material3 = { group = "androidx.compose.material3", name = "material3" }
-compose_icons = { group = "androidx.compose.material", name = "material-icons-extended" }
-compose_ui_test_junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-ui-test-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidxCompose" }
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
+androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 
-# Activity
-activity_compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 # Retrofit
-retrofit_core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit_gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okHttp" }
+
 # Gson
-gson_core = { module = "com.google.code.gson:gson", version.ref = "gson" }
-# Coil
-coil_core = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+gson-core = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
 # Coroutines
-coroutine_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
-coroutine_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
-coroutine_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine" }
+coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
+coroutine-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
+coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine" }
+
 # Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-android = { group = "io.insert-koin", name = "koin-android" }
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
 koin-androidx-startup = { group = "io.insert-koin", name = "koin-androidx-startup" }
-koin-annotations-core = { group = "io.insert-koin", name = "koin-annotations" , version.ref= "koinAnnotations" }
-koin-annotations-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref= "koinAnnotations" }
+koin-annotations-core = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koinAnnotations" }
+koin-annotations-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koinAnnotations" }
+
 # Android core
-core_ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-# Test
-junit = { module = "junit:junit", version.ref = "junit" }
-# AndroidTest
-test_ext = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
-test_espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
-##Plugins
-dep-google-secrets-gradle-plugin = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+# Test
+junit = { module = "junit:junit", version.ref = "junit" }
+
+# AndroidTest
+test-ext = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
+test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+
+##Plugins
+dep-google-secrets-gradle-plugin = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
@@ -87,10 +96,8 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 
 [bundles]
 # Define bundles/groups of libraries
-compose = ["compose_ui", "compose_material3", "compose_tooling_preview", "compose_icons"]
-compose_debug = ["compose_tooling", "compose_ui_test_manifest"]
-coroutine = ["coroutine_core", "coroutine_android"]
-retrofit = ["retrofit_core", "retrofit_gson"]
+coroutine = ["coroutine-core", "coroutine-android"]
+retrofit = ["retrofit-core", "retrofit-gson"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

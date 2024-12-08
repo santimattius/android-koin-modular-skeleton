@@ -1,16 +1,16 @@
 package com.santimattius.basic.skeleton.di
 
-import com.santimattius.basic.skeleton.core.networking.RetrofitServiceCreator
+import com.santimattius.basic.skeleton.core.SayHelloServices
 import org.koin.core.annotation.Factory
 import org.koin.core.annotation.Module
-import org.koin.core.annotation.Singleton
+import org.koin.core.annotation.Single
 
 @Module
 class AppModule {
 
     @Factory
-    @Singleton
-    fun provideRetrofitCreator(): RetrofitServiceCreator {
-        return RetrofitServiceCreator(baseUrl = "https://www.example.com/api")
+    @Single
+    fun provideSayHelloServices(): SayHelloServices {
+        return SayHelloServices()
     }
 }

@@ -1,4 +1,4 @@
-package com.santimattius.basic.skeleton.ui.component
+package com.santimattius.android.ui.component
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.ExperimentalMaterial3Api

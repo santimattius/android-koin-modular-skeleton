@@ -4,7 +4,7 @@ import com.automattic.android.measure.reporters.SlowSlowTasksMetricsReporter
 plugins {
     id("io.github.santimattius.android.application")
     id("io.github.santimattius.android.application.compose")
-    id("io.github.santimattius.android.koin")
+    id("io.github.santimattius.android.koin.application")
     alias(libs.plugins.detekt)
     alias(libs.plugins.google.secrets.gradle.plugin)
     alias(libs.plugins.automattic.measure.builds)
@@ -79,19 +79,21 @@ measureBuilds {
 
 dependencies {
 
-    implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.lifecycle.viewmodel.compose)
-    implementation(libs.lifecycle.runtime.compose)
-    implementation(libs.activity.compose)
+    implementation(project(":core:ui"))
+    implementation(project(":features:first-module"))
+    implementation(project(":features:second-module"))
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.activity.compose)
 
     implementation(libs.bundles.coroutine)
     testImplementation(libs.coroutine.test)
     implementation(libs.bundles.retrofit)
     implementation(libs.gson.core)
     testImplementation(libs.mockwebserver)
-
-    implementation(libs.coil.core)
 
     testImplementation(libs.junit)
 

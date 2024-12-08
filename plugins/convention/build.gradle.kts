@@ -78,12 +78,20 @@ gradlePlugin {
             tags = listOf("android")
             implementationClass = "AndroidFeatureConventionPlugin"
         }
-        register("androidKoin") {
-            id = "${groupIdentifier}.android.koin"
+        register("androidKoinApplication") {
+            id = "${groupIdentifier}.android.koin.application"
             displayName = "Android Koin Setup"
             description = "Setup your android app with Koin"
             tags = listOf("android")
-            implementationClass = "AndroidKoinConventionPlugin"
+            implementationClass = "AndroidAppKoinConventionPlugin"
+        }
+
+        register("androidKoinLibrary") {
+            id = "${groupIdentifier}.android.koin.library"
+            displayName = "Android Koin Setup"
+            description = "Setup your android app with Koin"
+            tags = listOf("android")
+            implementationClass = "AndroidLibraryKoinConventionPlugin"
         }
     }
 }
