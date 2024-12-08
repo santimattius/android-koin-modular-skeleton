@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.santimattius.android.ui.component
 
 import androidx.compose.foundation.layout.PaddingValues
