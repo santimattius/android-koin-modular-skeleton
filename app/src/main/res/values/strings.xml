@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Basic Koin Skeleton</string>
-    <string name="text_desc_main_action">Say Hello Android</string>
+    <string name="app_name">Koin Modular Skeleton</string>
+    <string name="text_desc_main_action">Go to module</string>
 </resources>

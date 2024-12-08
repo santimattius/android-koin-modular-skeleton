@@ -20,4 +20,3 @@ gradle.startParameter.excludedTaskNames.addAll(listOf(":plugins:convention:testC
 include(":app")
 include(":core:ui")
 include(":features:first-module")
-include(":features:second-module")

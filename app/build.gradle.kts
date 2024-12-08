@@ -81,7 +81,6 @@ dependencies {
 
     implementation(project(":core:ui"))
     implementation(project(":features:first-module"))
-    implementation(project(":features:second-module"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
