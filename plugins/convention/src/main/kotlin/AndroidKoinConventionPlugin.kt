@@ -1,3 +1,4 @@
+import com.android.build.gradle.AbstractAppExtension
 import com.google.devtools.ksp.gradle.KspExtension
 import io.github.santimattius.android.libs
 import org.gradle.api.Plugin
@@ -14,14 +15,23 @@ class AndroidKoinConventionPlugin : Plugin<Project> {
             extensions.configure<KspExtension> {
                 arg("KOIN_CONFIG_CHECK", "true")
             }
+            extensions.configure<AbstractAppExtension>{
+                // Set KSP sourceSet
+                applicationVariants.forEach { variant ->
+                    variant.sourceSets.forEach {
+                        it.javaDirectories += files("build/generated/ksp/${variant.name}/kotlin")
+                    }
+                }
+            }
+
 
             dependencies {
                 val bom = libs.findLibrary("koin.bom").get()
                 add("implementation", platform(bom))
                 add("implementation", libs.findLibrary("koin.android").get())
-                add("implementation", libs.findLibrary("koin.android").get())
+                add("implementation", libs.findLibrary("koin.androidx.compose").get())
                 add("implementation", libs.findLibrary("koin.androidx.startup").get())
-                add("compileOnly", libs.findLibrary("koin.androidx.compose").get())
+                add("compileOnly", libs.findLibrary("koin.annotations.core").get())
                 add("ksp", libs.findLibrary("koin.annotations.compiler").get())
             }
         }

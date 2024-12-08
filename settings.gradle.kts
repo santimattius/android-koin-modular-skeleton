@@ -14,6 +14,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+//exclude testClasses task from plugins
+gradle.startParameter.excludedTaskNames.addAll(listOf(":plugins:convention:testClasses"))
+
 include(":app")
 include(":features:first-module")
 include(":features:second-module")

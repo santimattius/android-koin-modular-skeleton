@@ -60,12 +60,6 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
-    // Set KSP sourceSet
-    applicationVariants.forEach { variant ->
-        variant.sourceSets.forEach {
-            it.javaDirectories += files("build/generated/ksp/${variant.name}/kotlin")
-        }
-    }
 }
 
 detekt {

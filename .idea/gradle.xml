@@ -4,6 +4,18 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/plugins" name="plugins">
+                <projects>
+                  <project path="$PROJECT_DIR$/plugins" />
+                  <project path="$PROJECT_DIR$/plugins/convention" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="testRunner" value="CHOOSE_PER_TEST" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="/usr/local/Cellar/gradle/7.3.3/libexec" />
@@ -12,8 +24,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/first-module" />
-            <option value="$PROJECT_DIR$/second-module" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/first-module" />
+            <option value="$PROJECT_DIR$/features/second-module" />
+            <option value="$PROJECT_DIR$/plugins" />
+            <option value="$PROJECT_DIR$/plugins/convention" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
