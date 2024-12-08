@@ -1,9 +1,14 @@
 package com.santimattius.android.first.module
 
-import org.koin.core.module.dsl.singleOf
-import org.koin.dsl.module
+import org.koin.core.annotation.Module
+import org.koin.core.annotation.Single
 
 
-val firstModule = module {
-    singleOf(::FirstModuleServices)
+@Module
+class FirstModule{
+
+    @Single
+    fun provideFirstModuleServices(): FirstModuleServices {
+        return FirstModuleServices()
+    }
 }
