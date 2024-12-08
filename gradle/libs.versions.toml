@@ -70,6 +70,7 @@ coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", ver
 # Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-android = { group = "io.insert-koin", name = "koin-android" }
+koin-core-coroutines = { group = "io.insert-koin", name = "koin-core-coroutines" }
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
 koin-androidx-startup = { group = "io.insert-koin", name = "koin-androidx-startup" }
 koin-annotations-core = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koinAnnotations" }
