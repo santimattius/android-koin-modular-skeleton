@@ -7,6 +7,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import org.koin.androix.startup.KoinInitializer
 import org.koin.core.Koin
 import org.koin.core.annotation.KoinInternalApi
+//import org.koin.core.context.loadKoinModules
 import org.koin.core.coroutine.KoinCoroutinesEngine
 import org.koin.core.coroutine.KoinCoroutinesEngine.Companion.EXTENSION_NAME
 import org.koin.core.extension.coroutinesEngine
@@ -17,7 +18,7 @@ import kotlin.time.measureTime
 class FirstModuleInitializer : Initializer<Unit> {
 
     override fun create(context: Context) {
-        //loadLazyModules(lazyFirstModule)
+        //loadKoinModules(lazyFirstModule)
         val time = measureTime {
             loadLazyModules(lazyFirstModule)
         }
